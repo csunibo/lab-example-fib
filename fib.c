@@ -1,11 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-long int fib(long int n) {
+long int fibonacci(long int n) {
   if (n == 0 || n == 1)
     return 1;
-
-  return fib(n - 1) + fib(n - 2);
+  return fibonacci(n - 1) + fibonacci(n - 2);
 }
 
 int main(int argc, char *argv[]) {
@@ -23,6 +22,6 @@ int main(int argc, char *argv[]) {
     return 2;
   }
 
-  printf("%ld\n", fib(n));
+  printf("%ld\n", fibonacci(n));
   return 0;
 }

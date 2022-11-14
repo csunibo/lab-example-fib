@@ -2,10 +2,13 @@
 #include <stdlib.h>
 
 long int fib(long int n) {
-  if (n == 0 || n == 1)
-    return 1;
-
-  return fib(n - 1) + fib(n - 2);
+  unsigned int prevprev = 0, prev = 1;
+  while (n-- > 1) {
+    int backup = prevprev;
+    prevprev = prev;
+    prev += backup;
+  }
+  return prev;
 }
 
 int main(int argc, char *argv[]) {
